@@ -95,7 +95,7 @@
 		  },
         success: function(datos){
 		$("#outer_div").html(datos);
-		load(1);
+		//load(1);
 		}
 			});
 		}

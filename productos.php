@@ -67,7 +67,7 @@
 	<?php
 	include("footer.php");
 	?>
-	<script type="text/javascript" src="js/productos.js"></script>
+	<script type="text/javascript" src="js/productos.js?v1"></script>
 	<script type="text/javascript" src="js/VentanaCentrada.js"></script>
   </body>
 </html>
