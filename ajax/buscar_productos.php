@@ -9,8 +9,10 @@
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if (isset($_GET['id'])){
 		$id_producto=$_GET['id'];
-		$query=mysqli_query($con, "SELECT * from products_nutricion where codigo_producto='".$id_producto."'");
-		$count=mysqli_num_rows($query);
+		$delete1=mysqli_query($con,"DELETE FROM products_nutricion WHERE codigo_producto='".$id_producto."'");
+		$delete1=mysqli_query($con,"DELETE FROM products WHERE codigo_producto='".$id_producto."'");
+		//$query=mysqli_query($con, "SELECT * from products_nutricion where codigo_producto='".$id_producto."'");
+	/*	$count=mysqli_num_rows($query);
 		if ($count==0){
 			if ($delete1=mysqli_query($con,"DELETE FROM products WHERE codigo_producto='".$id_producto."'")){
 			?>
@@ -35,7 +37,7 @@
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			  <strong>Error!</strong> No se pudo eliminar éste  producto. Existen en Inventario</div>
 			<?php
-		}			
+		}*/		
 	}
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
